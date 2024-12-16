@@ -21,7 +21,6 @@ rev = reverse . reverseFront
 
 reverseFront :: (Fractional a, Eq a) => [[a]] -> [[a]]
 reverseFront = map (maybe [] (\(a, b) -> b ++ [a]) . uncons . reverse)
-    -- should throw error if list is empty
 
 mult :: (Fractional a, Eq a) => [[a]] -> [[a]]
 mult m = zipWith (\a b -> map (/ (a !! b)) a) m [0..(length m - 1)]
