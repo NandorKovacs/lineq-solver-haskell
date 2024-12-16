@@ -3,8 +3,6 @@ import Data.List (sortOn, transpose, uncons)
 solveLinEq :: (Fractional a, Eq a) => [[a]] -> [[a]]
 solveLinEq = mult . rev . reduce . rev . reduce . rowEchelon
 
-
-
 rowEchelon :: (Fractional a, Eq a) => [[a]] -> [[a]]
 rowEchelon = sortOn (length . takeWhile (== 0))
 
